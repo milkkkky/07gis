@@ -1,0 +1,39 @@
+
+<html>
+	<head>
+		<title>My first three.js app</title>
+		<style>
+			body { margin: 0; }
+		</style>
+	</head>
+	<body>
+        <div id="App">
+        </div>
+		<script src="../threejs/three.js"></script>
+		<script src="../threejs/OrbitControls.js"></script>
+		<script src="js/threeMap.js"></script>
+		<script src="../include/jquery-3.1.1.min.js"></script>
+		<script src="../util/util.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<!-- <script src="../threejs/d3-geo.v2.min.js"></script> -->
+		<!-- <script src="http://www.yanhuangxueyuan.com/threejs/build/three.js"></script> -->
+		<script>
+			$(function(){
+				$.get('./map/china.json',d=>{
+					
+					const util = new Utils()
+					const mapData = util.decode(d);
+					
+					const map = new ThreeMap({mapData});
+  					// const map = new ThreeMapLightBar({ mapData });
+  					// 	map.on('click', (e, g) => {
+    				// 	console.log(g);
+    				// 	map.setAreaColor(g);
+  					// });
+				})
+				
+				// map.init()
+			})
+		</script>
+	</body>
+</html>

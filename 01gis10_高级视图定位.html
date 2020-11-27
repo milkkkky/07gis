@@ -137,6 +137,7 @@
         var zoomtoswitzerlandbest = document.getElementById('zoomtoswitzerlandbest');
         // constrainResolution 不受分辨率限制
         zoomtoswitzerlandbest.addEventListener('click', function () {
+          console.log(source.getFeatures())
             var feature = source.getFeatures()[0];
             var polygon = feature.getGeometry();
             view.fit(polygon, { padding: [170, 50, 30, 150], constrainResolution: false });
